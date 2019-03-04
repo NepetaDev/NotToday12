@@ -1,0 +1,9 @@
+Package: me.nepeta.nottoday12
+Name: NotToday12
+Depends: mobilesubstrate, ws.hbang.common (>= 1.11)
+Version: 0.1.0
+Architecture: iphoneos-arm
+Description: Removes the "Today" view.
+Maintainer: Nepeta
+Author: Nepeta
+Section: Tweaks
