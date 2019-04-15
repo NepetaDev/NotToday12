@@ -27,14 +27,8 @@ bool enabled = false;
 
 %hook SBRootFolderView
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    CGFloat width = [[UIScreen mainScreen] bounds].size.width;
-
-    if (scrollView.contentOffset.x < width) {
-        [scrollView setContentOffset:CGPointMake(width, 0)];
-    }
-
-    %orig;
+-(unsigned long long)_minusPageCount {
+    return 0;
 }
 
 %end
