@@ -4,19 +4,14 @@ bool enabled = false;
 
 %group NotToday12
 
-%hook SBPagedScrollView
+%hook SBMainDisplayPolicyAggregator
 
--(void)setPageViews:(NSArray *)views {
-    NSMutableArray *newViews = [NSMutableArray new];
-    for (SBDashBoardPageViewBase *view in views) {
-        if ([view.pageViewController isKindOfClass:%c(SBDashBoardTodayPageViewController)]) {
-            [view removeFromSuperview];
-        } else {
-            [newViews addObject:view];
-        }
-    }
-    views = newViews;
-    %orig(views);
+-(BOOL)_allowsCapabilityLockScreenTodayViewWithExplanation:(id*)arg1 {
+    return false;
+}
+
+-(BOOL)_allowsCapabilityTodayViewWithExplanation:(id*)arg1 {
+    return false;
 }
 
 %end
