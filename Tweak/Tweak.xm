@@ -16,19 +16,17 @@ bool enabled = false;
 
 %end
 
-%hook SBHomeScreenTodayViewController
-
--(void)viewWillAppear:(bool)arg1 {
-    %orig;
-    [self.view removeFromSuperview];
-}
-
-%end
-
 %hook SBRootFolderView
 
 -(unsigned long long)_minusPageCount {
     return 0;
+}
+
+-(void)_layoutSubviewsForTodayView {
+    %orig;
+    [self todayViewController].view.alpha = 0.0;
+    [self todayViewController].view.hidden = YES;
+    [[self todayViewController].view removeFromSuperview];
 }
 
 %end

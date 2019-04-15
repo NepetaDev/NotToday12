@@ -6,26 +6,8 @@
 #import <Cephei/HBPreferences.h>
 #endif
 
-@interface SBDashBoardPageViewBase : UIView
+@interface SBRootFolderView : UIView
 
-@property (nonatomic,retain) UIViewController *pageViewController;
-
-@end
-
-@interface SBHomeScreenTodayViewController : UIViewController
-
-@end
-
-@interface SBIconScrollView : UIView
-
-@end
-
-@interface _SBRootFolderLayoutWrapperView : UIView
-
-@end
-
-@interface SBIconListPageControl : UIView
-
-@property (nonatomic, retain) UIView *ntFirst;
+-(UIViewController *)todayViewController;
 
 @end
