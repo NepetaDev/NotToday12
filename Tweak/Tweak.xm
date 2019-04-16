@@ -34,7 +34,11 @@ bool enabled;
 
 %ctor{
     NSLog(@"[NotToday12] init");
+    #ifndef SIMULATOR
     preferences = [[HBPreferences alloc] initWithIdentifier:@"me.nepeta.nottoday12"];
     [preferences registerBool:&enabled default:YES forKey:@"Enabled"];
+    #else
+    enabled = YES;
+    #endif
     %init(NotToday12);
 }
