@@ -1,5 +1,7 @@
 {
   "ENABLED" = "Enabled";
+  "ENABLED_COVER_SHEET" = "Cover sheet/lock screen";
+  "ENABLED_HOME_SCREEN" = "Home screen";
 
   "RESPRING" = "Respring";
   "RESRPING_NEEDED" = "YOU WILL HAVE TO RESPRING YOUR DEVICE AFTER EDITING SETTINGS HERE.";

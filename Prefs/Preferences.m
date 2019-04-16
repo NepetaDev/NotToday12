@@ -1,7 +1,6 @@
 #import "Preferences.h"
 
 @implementation NTPrefsListController
-@synthesize respringButton;
 
 - (instancetype)init {
     self = [super init];
@@ -11,12 +10,6 @@
         appearanceSettings.tintColor = [UIColor colorWithRed:0.1f green:0.1f blue:0.1f alpha:1];
         appearanceSettings.tableViewCellSeparatorColor = [UIColor colorWithWhite:0 alpha:0];
         self.hb_appearanceSettings = appearanceSettings;
-        self.respringButton = [[UIBarButtonItem alloc] initWithTitle:@"Respring" 
-                                    style:UIBarButtonItemStylePlain
-                                    target:self 
-                                    action:@selector(respring:)];
-        self.respringButton.tintColor = [UIColor redColor];
-        self.navigationItem.rightBarButtonItem = self.respringButton;
     }
 
     return self;
@@ -37,13 +30,6 @@
 	
     [self.navigationController.navigationController.navigationBar setShadowImage: [UIImage new]];
     self.navigationController.navigationController.navigationBar.translucent = YES;
-}
-
-- (void)resetPrefs:(id)sender {
-    HBPreferences *prefs = [[HBPreferences alloc] initWithIdentifier:@"me.nepeta.nottoday12"];
-    [prefs removeAllObjects];
-    
-    [self respring:sender];
 }
 
 - (void)respring:(id)sender {

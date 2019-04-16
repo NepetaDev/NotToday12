@@ -6,7 +6,5 @@
 #import "NSTask.h"
 
 @interface NTPrefsListController : HBRootListController
-    @property (nonatomic, retain) UIBarButtonItem *respringButton;
-    - (void)resetPrefs:(id)sender;
     - (void)respring:(id)sender;
 @end
